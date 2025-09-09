@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 
+int count=0;
+
 typedef struct{
-       int ID;
+       int ID[100];
        char name[100][15];
-       char prenome[100][15];
-       int playernumber;
+       char lastname[100][15];
+       int playernumber[100];
        char playerrole[100][15];
-       int age;
-       int goals;
+       int age[100];
+       int goals[100];
 }player;
 player p1;
 
@@ -62,6 +64,7 @@ int main(){
 
 void Addingplayer(){
        int choice1;
+       int players;
          
   
       printf("\n-----------Football Team Managment-----------");
@@ -72,9 +75,44 @@ void Addingplayer(){
            scanf("%d",&choice1); 
 
              if(choice1 == 1){
+                  printf("\nAdd Player Name: ");
+                        scanf("%s",p1.name[count]);
+                  printf("\nAdd Player Last Name: ");
+                        scanf("%s",p1.lastname[count]);
+                  printf("\nAdd Player Number: ");
+                        scanf("%s",p1.playernumber[count]);
+                  printf("\nAdd Player Position: ");
+                        scanf("%s",p1.lastname[count]);
+                  printf("\nAdd Player Age: ");
+                        scanf("%s",p1.age[count]);
+                  printf("\nAdd Player Age: ");
+                        scanf("%s",p1.goals[count]);
 
+            count++ ;
+            printf("\nPlayer Added successfully!\n")
 
              } else if(choice1 == 2){
+              
+              printf("Enter Number of Players to add: ");
+                    scanf("%d",&players);
+
+                for(int i=0 ; i < players ; i++)
+
+                  printf("\nAdd Player Name: ");
+                        scanf("%s",p1.name[count]);
+                  printf("\nAdd Player Last Name: ");
+                        scanf("%s",p1.lastname[count]);
+                  printf("\nAdd Player Number: ");
+                        scanf("%s",p1.playernumber[count]);
+                  printf("\nAdd Player Position: ");
+                        scanf("%s",p1.lastname[count]);
+                  printf("\nAdd Player Age: ");
+                        scanf("%s",p1.age[count]);
+                  printf("\nAdd Player Age: ");
+                        scanf("%s",p1.goals[count]);
+
+            count++ ;
+            printf("\nPlayer Added successfully!\n")
 
              }else{
                    printf("wrong Choice must be ( 1 or 2)");

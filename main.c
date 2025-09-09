@@ -16,6 +16,7 @@ player p1;
 
 void Addingplayer();
 void ShowPlayers();
+void Editplayer();
 
 
 int main(){
@@ -35,14 +36,14 @@ int main(){
       printf("\nEnter Your Choice: ");
            scanf("%d",&choice);
        switch (choice){
-       case 1:  // Add a Player
+       case 1:  
               Addingplayer();
         break;
        case 2:
               ShowPlayers();
         break;
        case 3:
-        
+              Editplayer();
         break;
        case 4:
         
@@ -124,13 +125,43 @@ void Addingplayer(){
 }
 void ShowPlayers(){
   printf("---------------Players List---------------\n");
-        for(int i = 0 ; i < count ; i++) 
-        printf("Player Name: %s",p1.name[i]);
-        printf("Player Last Name: %s",p1.lastname[i]);
-        printf("Player Name: %s",p1.name[i]);
-        printf("\nAdd Player Number: %d",p1.playernumber[i]);                
-        printf("\nAdd Player Position: %s",p1.playerrole[i]);             
-        printf("\nAdd Player Age: %d",p1.age[i]);            
-        printf("\nAdd Player Goals: %d",p1.goals[i]);
-                        
+        for(int i = 0 ; i < count ; i++) {
+        printf("\nPlayer Name: %s",p1.name[i]);
+        printf("\nPlayer Last Name: %s",p1.lastname[i]);
+        printf("\nPlayer Name: %s",p1.name[i]);
+        printf("\nPlayer Number: %d",p1.playernumber[i]);                
+        printf("\nPlayer Position: %s",p1.playerrole[i]);             
+        printf("\nPlayer Age: %d",p1.age[i]);            
+        printf("\nPlayer Goals: %d",p1.goals[i]);
+        }
+}
+
+void Editplayer(){
+         int choice2;
+  
+ printf("---------------Edit Player---------------\n");
+         
+        printf("1. Change Player Postion");
+        printf("2. Change Player age");
+        printf("3. Change Player Scored Goals");
+        printf("\n---------------------------------------------");
+        printf("\nEnter Your Choice: ");
+           scanf("%d",&choice2); 
+            
+             if(choice2 == 1){
+                  
+       }        
+                  else if(choice2 == 2){
+      
+       }
+                           else if(choice2 == 3){
+
+                  
+       }
+       else{
+            printf("Wrong Choice Must be Between (1 - 3)");
+            return Editplayer();
+       }
+
+              
 }

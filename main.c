@@ -16,7 +16,8 @@ typedef struct{
        int goals;
 } Player;
 
-Player p1[100];   
+Player p1[100];
+Player p2[10];
 
 void Addingplayer();
 void ShowPlayers();
@@ -24,8 +25,10 @@ void Editplayer();
 void DeletePlayer();
 void Searchforplayer();
 void playersStatistics();
+void Randomplayers();
 
 int main(){
+      Randomplayers();
      int choice;
 
     do{
@@ -162,14 +165,15 @@ void ShowPlayers(){
                   }
                   for(int i=0 ; i < count ; i++){
 
-                           printf("\nPlayer ID: %d",p1[i].id);
-                           printf("\nPlayer Name: %s",p1[i].name);
-                           printf("\nPlayer Last Name: %s",p1[i].lastname);
-                           printf("\nPlayer Number: %d",p1[i].playernumber);                
-                           printf("\nPlayer Position: %s",p1[i].playerrole);             
-                           printf("\nPlayer Age: %d",p1[i].age);            
-                           printf("\nPlayer Goals: %d",p1[i].goals);
-                           printf("----------------------------------------");
+printf("ID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
+                   p1[i].id,
+                   p1[i].name,
+                   p1[i].lastname,
+                   p1[i].playernumber,
+                   p1[i].playerrole,
+                   p1[i].age,
+                   p1[i].goals);
+                           
                   }
                   
        }        
@@ -187,13 +191,14 @@ void ShowPlayers(){
                   }
                   for(int i=0 ; i < count ; i++){
 
-                           printf("\nPlayer ID: %d",p1[i].id);
-                           printf("\nPlayer Name: %s",p1[i].name);
-                           printf("\nPlayer Last Name: %s",p1[i].lastname);
-                           printf("\nPlayer Number: %d",p1[i].playernumber);                
-                           printf("\nPlayer Position: %s",p1[i].playerrole);             
-                           printf("\nPlayer Age: %d",p1[i].age);            
-                           printf("\nPlayer Goals: %d",p1[i].goals);
+printf("ID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
+                   p1[i].id,
+                   p1[i].name,
+                   p1[i].lastname,
+                   p1[i].playernumber,
+                   p1[i].playerrole,
+                   p1[i].age,
+                   p1[i].goals);
 
       
        }}
@@ -227,13 +232,14 @@ void ShowPlayers(){
                                       if (strcmp(p1[i].playerrole, searchbyposition) == 0)
                        {
                                     printf("\n              **********\n");
-                           printf("\nPlayer ID: %d",p1[i].id);
-                           printf("\nPlayer Name: %s",p1[i].name);
-                           printf("\nPlayer Last Name: %s",p1[i].lastname);
-                           printf("\nPlayer Number: %d",p1[i].playernumber);                
-                           printf("\nPlayer Position: %s",p1[i].playerrole);             
-                           printf("\nPlayer Age: %d",p1[i].age);            
-                           printf("\nPlayer Goals: %d",p1[i].goals);
+      printf("ID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
+                   p1[i].id,
+                   p1[i].name,
+                   p1[i].lastname,
+                   p1[i].playernumber,
+                   p1[i].playerrole,
+                   p1[i].age,
+                   p1[i].goals);
                        }}
 
                   
@@ -267,7 +273,7 @@ void Editplayer(){
                    
                     for( int i = 0 ; i < count ; i++){
                      if(p1[i].id == search){
-                          printf("Player is Found Current Position is: %s",p1[i].playerrole);
+                          printf("Player is Found \n Current Position is: %s",p1[i].playerrole);
                                 printf("\nAdd New Position: ");
                                     scanf("%s",newposition);
                                      strcpy(p1[i].playerrole, newposition);
@@ -315,7 +321,7 @@ void Editplayer(){
               
 }
 
-void DeletePlayer(){
+void DeletePlayer(){  // Problems to fix in here
       
       if (count == 0) {
         printf("Players List is Empty\n");
@@ -343,13 +349,11 @@ void DeletePlayer(){
                         }
                       count--;
                   }
-                     else{
-                        printf("\nPlayer ID not found\n");
-                     }
+                     
               }
-              
-
-
+             /* if(searchid != p1[i].id){
+                        printf("\nPlayer ID not found\n");
+                     } */
 }
 
 void Searchforplayer(){
@@ -372,13 +376,15 @@ void Searchforplayer(){
                   for(int i = 0 ; i < count ; i++){
                        if(idsearch == p1[i].id){
 
-                                   printf("*****Player Found*****");
-                           printf("\nPlayer Name: %s",p1[i].name);
-                           printf("\nPlayer Last Name: %s",p1[i].lastname);
-                           printf("\nPlayer Number: %d",p1[i].playernumber);                
-                           printf("\nPlayer Position: %s",p1[i].playerrole);             
-                           printf("\nPlayer Age: %d",p1[i].age);            
-                           printf("\nPlayer Goals: %d",p1[i].goals);
+                                   printf("*****Player Found*****\n");
+      printf("ID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
+                   p1[i].id,
+                   p1[i].name,
+                   p1[i].lastname,
+                   p1[i].playernumber,
+                   p1[i].playerrole,
+                   p1[i].age,
+                   p1[i].goals);
                        }
                        
                   }
@@ -390,13 +396,15 @@ void Searchforplayer(){
                   for(int i = 0 ; i< count ; i++){
                        if (strcmp(p1[i].name, namesearch) == 0)
                        {
-                                    printf("\n*****Player Found*****");
-                           printf("\nPlayer Name: %s",p1[i].name);
-                           printf("\nPlayer Last Name: %s",p1[i].lastname);
-                           printf("\nPlayer Number: %d",p1[i].playernumber);                
-                           printf("\nPlayer Position: %s",p1[i].playerrole);             
-                           printf("\nPlayer Age: %d",p1[i].age);            
-                           printf("\nPlayer Goals: %d",p1[i].goals);
+                                    printf("\n*****Player Found*****\n");
+     printf("ID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
+                   p1[i].id,
+                   p1[i].name,
+                   p1[i].lastname,
+                   p1[i].playernumber,
+                   p1[i].playerrole,
+                   p1[i].age,
+                   p1[i].goals);
                            found=0;
                        }
                   }                
@@ -418,9 +426,9 @@ void playersStatistics(){
 
             printf("2. Show the average age of players.\n");
 
-            printf("3. Show players who have scored more than X goals (X entered by user).\n");
+            printf("3. Show players who have scored more than X Goals.\n");
 
-            printf("4. Show top scorer (player with the most goals).\n");
+            printf("4. Show top scorer.\n");
 
             printf("5. Show youngest and oldest player.\n");
 
@@ -445,10 +453,26 @@ void playersStatistics(){
               
                 avrg = sumofages / count ;
 
-                       printf("The average age of players: %d",avrg);
+                       printf("\nThe average age of players: %d\n",avrg);
         break;
        case 3:
-              playersStatistics();
+               int x;
+               printf("Enter Amount of Goals");
+                   scanf("%d",&x);
+
+                      for(int i=0 ; i < count ; i++){
+                         if( p1[i].goals > x )
+                             printf("Players With More Then %d Goals",x);
+       printf("ID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
+                   p1[i].id,
+                   p1[i].name,
+                   p1[i].lastname,
+                   p1[i].playernumber,
+                   p1[i].playerrole,
+                   p1[i].age,
+                   p1[i].goals);
+
+                      }
         break;
        case 4:
               playersStatistics();
@@ -461,4 +485,37 @@ void playersStatistics(){
         break;
             }
 
+}
+
+
+void Randomplayers(){
+   
+    char names[10][15] = {"Lionel","Cristiano","Virgil","Kevin","Mohamed","Hakim","Achraf","Noussair","Yassine","Sofyan"};
+    
+    char lastnames[10][15] = {"Messi","Ronaldo","VanDijk","DeBruyne","Salah",
+                              "Ziyech","Hakimi","Mazraoui","Bounou","Amrabat"};
+
+    int numbers[10] = {10,7,4,17,11,
+                        7,2,3,1,4};
+
+    char roles[10][15] = {"attacker","attacker","defender","midfielder","attacker",
+                          "midfielder","defender","defender","goalkeeper","midfielder"};
+
+    int ages[10] = {36,38,32,33,31,
+                     30,26,27,32,28};
+
+    int goals[10] = {800,850,30,120,230,
+                      50,20,10,0,5};
+
+    for(int i=0;i<10;i++){
+        playerid++;
+        p1[i].id = playerid;
+        strcpy(p1[i].name, names[i]);
+        strcpy(p1[i].lastname, lastnames[i]);
+        p1[i].playernumber = numbers[i];
+        strcpy(p1[i].playerrole, roles[i]);
+        p1[i].age = ages[i];
+        p1[i].goals = goals[i];
+        count++;
+    }
 }

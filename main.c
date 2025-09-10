@@ -16,8 +16,7 @@ typedef struct{
        int goals;
 } Player;
 
-Player p1[100]; 
-Player p2[100];  
+Player p1[100];   
 
 void Addingplayer();
 void ShowPlayers();
@@ -138,22 +137,7 @@ void Addingplayer(){
 void ShowPlayers(){
       int choice5;
       char searchbyposition[20];
-      int choiceposition;
-
-                               /* Coping everything to another struct ghi bash manekhasaresh l original one
-                                  wakha not needed */
-
-                        for ( int i = 0; i < count; i++) 
-                        {
-                               p2[i].id = p1[i].id ;
-                           strcpy(p2[i].name, p1[i].name);
-                           strcpy(p2[i].lastname, p1[i].lastname);
-                           p2[i].playernumber = p1[i].playernumber ;           
-                           strcpy(p2[i].playerrole, p1[i].playerrole) ;            
-                           p2[i].age = p1[i].age ;    
-                           p2[i].goals = p1[i].goals ;
-                        }
-                        
+      int choiceposition;          
            
    printf("\n---------------Show Players---------------\n");
          
@@ -169,22 +153,22 @@ void ShowPlayers(){
 
                    for(int i=0 ; i < count - 1; i++){
                        for(int j = i + 1 ; j < count ; j++){
-                           if(strcmp(p2[i].name, p2[j].name )> 0){
-                              tmp = p2[i];
-                              p2[i] = p2[j];
-                              p2[j] = tmp;
+                           if(strcmp(p1[i].name, p1[j].name )> 0){
+                              tmp = p1[i];
+                              p1[i] = p1[j];
+                              p1[j] = tmp;
                            }
                        }
                   }
                   for(int i=0 ; i < count ; i++){
 
-                           printf("Player ID: %d",p2[i].id);
-                           printf("\nPlayer Name: %s",p2[i].name);
-                           printf("\nPlayer Last Name: %s",p2[i].lastname);
-                           printf("\nPlayer Number: %d",p2[i].playernumber);                
-                           printf("\nPlayer Position: %s",p2[i].playerrole);             
-                           printf("\nPlayer Age: %d",p2[i].age);            
-                           printf("\nPlayer Goals: %d",p2[i].goals);
+                           printf("\nPlayer ID: %d",p1[i].id);
+                           printf("\nPlayer Name: %s",p1[i].name);
+                           printf("\nPlayer Last Name: %s",p1[i].lastname);
+                           printf("\nPlayer Number: %d",p1[i].playernumber);                
+                           printf("\nPlayer Position: %s",p1[i].playerrole);             
+                           printf("\nPlayer Age: %d",p1[i].age);            
+                           printf("\nPlayer Goals: %d",p1[i].goals);
                   }
                   
        }        
@@ -193,22 +177,22 @@ void ShowPlayers(){
 
                         for(int i=0 ; i < count - 1; i++){
                        for(int j = i + 1 ; j < count ; j++){
-                           if( p2[i].age > p2[j].age ){
-                              tmp = p2[i];
-                              p2[i] = p2[j];
-                              p2[j] = tmp;
+                           if( p1[i].age > p1[j].age ){
+                              tmp = p1[i];
+                              p1[i] = p1[j];
+                              p1[j] = tmp;
                            }
                        }
                   }
                   for(int i=0 ; i < count ; i++){
 
-                           printf("\nPlayer ID: %d",p2[i].id);
-                           printf("\nPlayer Name: %s",p2[i].name);
-                           printf("\nPlayer Last Name: %s",p2[i].lastname);
-                           printf("\nPlayer Number: %d",p2[i].playernumber);                
-                           printf("\nPlayer Position: %s",p2[i].playerrole);             
-                           printf("\nPlayer Age: %d",p2[i].age);            
-                           printf("\nPlayer Goals: %d",p2[i].goals);
+                           printf("\nPlayer ID: %d",p1[i].id);
+                           printf("\nPlayer Name: %s",p1[i].name);
+                           printf("\nPlayer Last Name: %s",p1[i].lastname);
+                           printf("\nPlayer Number: %d",p1[i].playernumber);                
+                           printf("\nPlayer Position: %s",p1[i].playerrole);             
+                           printf("\nPlayer Age: %d",p1[i].age);            
+                           printf("\nPlayer Goals: %d",p1[i].goals);
 
       
        }}
@@ -242,7 +226,7 @@ void ShowPlayers(){
                                       if (strcmp(p1[i].playerrole, searchbyposition) == 0)
                        {
                                     printf("\n              **********\n");
-                           printf("Player ID: %d",p1[i].id);
+                           printf("\nPlayer ID: %d",p1[i].id);
                            printf("\nPlayer Name: %s",p1[i].name);
                            printf("\nPlayer Last Name: %s",p1[i].lastname);
                            printf("\nPlayer Number: %d",p1[i].playernumber);                
@@ -263,10 +247,12 @@ void ShowPlayers(){
 void Editplayer(){
          int choice2;
          int search;
+         int newage;
+         char newposition[15];
   
  printf("\n---------------Edit Player---------------\n");
          
-        printf("\n1. Change Player Postion\n");
+        printf("\n1. Change Player Position\n");
         printf("2. Change Player age\n");
         printf("3. Change Player Scored Goals\n");
         printf("\n---------------------------------------------");
@@ -274,15 +260,52 @@ void Editplayer(){
            scanf("%d",&choice2); 
             
              if(choice2 == 1){
-                  
-       }        
+                  printf("\n*********Changing Player Position*********\n");
+               printf("Enter Player ID: ");
+                    scanf("%d",&search);
+                   
+                    for( int i = 0 ; i < count ; i++){
+                     if(p1[i].id == search){
+                          printf("Player is Found Current Position is: %s",p1[i].playerrole);
+                                printf("\nAdd New Position: ");
+                                    scanf("%s",newposition);
+                                     strcpy(p1[i].playerrole, newposition);
+                     }
+                  }
+                               printf("Player Position is Changed Successfully!");
+             }
                   else if(choice2 == 2){
+                        printf("\n*********Changing Player Age*********\n");
+               printf("Enter Player ID: ");
+                    scanf("%d",&search);
+                    for( int i = 0 ; i < count ; i++){
+                     if(p1[i].id == search){
+                          printf("Player is Found Current Age is: %d",p1[i].age);
+                                printf("\nAdd New Age: ");
+                                    scanf("%d",&newage);
+                                     p1[i].age = newage  ;
+                     }
+                  }
+       }        
       
-       }
                            else if(choice2 == 3){
+                        int newgoals;
+                              printf("\n*********Changing Player Scored Goals*********\n");
+               printf("Enter Player ID: ");
+                    scanf("%d",&search);
+                   
+                    for( int i = 0 ; i < count ; i++){
+                     if(p1[i].id == search){
+                          printf("Player is Found Current Goals are: %d",p1[i].goals);
+                                printf("\nAdd New Scored Goals: ");
+                                    scanf("%d",&newgoals);
+                                     p1[i].goals = newgoals;
+                     }
+                  }
+                               printf("Player Scored Goals Changed Successfully!");
+             }
 
                   
-       }
        else{
             printf("Wrong Choice Must be Between (1 - 3)");
             return Editplayer();
@@ -409,11 +432,12 @@ void playersStatistics(){
 
             switch (choice4)
             {
-            case 1:  
+       case 1:  
                 printf("\nTotal Number of Players in the Team: %d\n",count);
         break;
-       case 2:
-              playersStatistics();
+       case 2:  // Average Age=Sum of all ages​ / Number of people ..
+              
+       
         break;
        case 3:
               playersStatistics();

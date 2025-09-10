@@ -436,7 +436,10 @@ void playersStatistics(){
                 printf("\nTotal Number of Players in the Team: %d\n",count);
         break;
        case 2:  // Average Age=Sum of all ages​ / Number of people ..
-              
+                
+             for( int i ; i < count ; i++){
+                    sumofages = p1[i].age + 
+                }
        
         break;
        case 3:

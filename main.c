@@ -234,13 +234,34 @@ void Editplayer(){
 }
 
 void DeletePlayer(){
-
-        int playerID;
+      
+      if (count == 0) {
+        printf("Players List is Empty\n");
+        return;
+      }
+        int searchid;
 
         printf("\n---------------Delete Player---------------\n"); 
         printf("\n Enter Player's ID To Delete: ");
-        scanf("%d",&playerID);
+        scanf("%d",&searchid);
         printf("\n---------------------------------------------");
+
+              for ( int i = 0 ; i < count ; i++ )
+              {
+                  if(searchid == p1.id[i]){
+                        for(int j = 0 ; j < count ; j++){
+                           p1.id[j] = p1.id[j+1] ;
+                           strcpy(p1.name[j], p1.name[j+1]);
+                           strcpy(p1.lastname[j], p1.lastname[j+1]);
+                           p1.playernumber[j] = p1.playernumber[j+1] ;           
+                           strcpy(p1.playerrole[j], p1.playerrole[j+1]) ;            
+                           p1.age[j] = p1.age[j+1] ;    
+                           p1.goals[j] = p1.goals[j+1] ;
+                        }
+                      count--;
+                  }
+              }
+              
 
 
 }

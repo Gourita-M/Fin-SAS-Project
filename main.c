@@ -169,6 +169,7 @@ void ShowPlayers(){
                            printf("\nPlayer Position: %s",p1[i].playerrole);             
                            printf("\nPlayer Age: %d",p1[i].age);            
                            printf("\nPlayer Goals: %d",p1[i].goals);
+                           printf("----------------------------------------");
                   }
                   
        }        
@@ -436,11 +437,15 @@ void playersStatistics(){
                 printf("\nTotal Number of Players in the Team: %d\n",count);
         break;
        case 2:  // Average Age=Sum of all ages​ / Number of people ..
-                
+                int sumofages;
+                int avrg;
              for( int i ; i < count ; i++){
-                    sumofages = p1[i].age + 
+                    sumofages = p1[i].age + sumofages;
                 }
-       
+              
+                avrg = sumofages / count ;
+
+                       printf("The average age of players: %d",avrg);
         break;
        case 3:
               playersStatistics();

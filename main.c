@@ -189,9 +189,29 @@ void ShowPlayers(){
                   
        }        
                   else if(choice5 == 2){
+                    Player tmp;
+
+                        for(int i=0 ; i < count - 1; i++){
+                       for(int j = i + 1 ; j < count ; j++){
+                           if( p2[i].age > p2[j].age ){
+                              tmp = p2[i];
+                              p2[i] = p2[j];
+                              p2[j] = tmp;
+                           }
+                       }
+                  }
+                  for(int i=0 ; i < count ; i++){
+
+                           printf("\nPlayer ID: %d",p2[i].id);
+                           printf("\nPlayer Name: %s",p2[i].name);
+                           printf("\nPlayer Last Name: %s",p2[i].lastname);
+                           printf("\nPlayer Number: %d",p2[i].playernumber);                
+                           printf("\nPlayer Position: %s",p2[i].playerrole);             
+                           printf("\nPlayer Age: %d",p2[i].age);            
+                           printf("\nPlayer Goals: %d",p2[i].goals);
 
       
-       }
+       }}
                            else if(choice5 == 3){
                                          printf("\n---------------Show Players By Position---------------\n");
          

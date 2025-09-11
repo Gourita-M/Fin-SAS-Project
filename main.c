@@ -56,30 +56,24 @@ int main(){
        switch (choice){
 
             case 1: 
-
                         Addingplayer();
                             break;
             case 2:
-
                         ShowPlayers();
                             break;
             case 3:
-
                         Editplayer();
                             break;
 
             case 4:
-
                         DeletePlayer();
                             break;
 
             case 5:
-
                         Searchforplayer();
                             break;
 
             case 6:
-
                         playersStatistics();
                             break;
        

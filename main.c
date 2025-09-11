@@ -180,9 +180,7 @@ void Addingplayer(){
   
 }
 void ShowPlayers(){
-      int choice5;
-      char searchbyposition[20];
-      int choiceposition;          
+      int choice5;      
 
       if (count == 0) {
                       printf("Players List is Empty\n");
@@ -316,7 +314,7 @@ void Editplayer(){
                                p1[i].id,p1[i].name,p1[i].lastname);
 
                              printf("\n Current Position is: %s",p1[i].playerrole);
-                             printf("\nAdd New Position: ");
+                             printf("\n Add New Position: ");
                               scanf("%s",newposition);
 
                                     strcpy(p1[i].playerrole, newposition);
@@ -413,7 +411,6 @@ void Searchforplayer(){
          int choice3;
          int idsearch;
          char namesearch[10];
-         int found=0;
 
                              printf("\n=================================================");
                              printf("\n            Search for Player Menu             ");
@@ -450,7 +447,7 @@ void Searchforplayer(){
                               printf("ID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
                                 p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber,p1[i].playerrole,p1[i].age,p1[i].goals);
                            
-                              found=0;
+                              
                         }
                   }                
       

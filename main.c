@@ -32,16 +32,19 @@ int main(){
 
            do{
     
-                   printf("\n-----------Football Team Managment-----------");
-                   printf("\n1. Add a Player");
-                   printf("\n2. Show All Players");
-                   printf("\n3. Edit Player");
-                   printf("\n4. Delete Player");
-                   printf("\n5. Search for Player");
-                   printf("\n6. Statistics");
-                   printf("\n0. Exit");
-                   printf("\n---------------------------------------------");
-                   printf("\nEnter Your Choice: ");
+                  printf("\n=============================================");
+                  printf("\n           Football Team Management           ");
+                  printf("\n=============================================");
+                  printf("\n  [1] Add a Player");
+                  printf("\n  [2] Show All Players");
+                  printf("\n  [3] Edit Player");
+                  printf("\n  [4] Delete Player");
+                  printf("\n  [5] Search for Player");
+                  printf("\n  [6] Statistics");
+                  printf("\n  [0] Exit");
+                  printf("\n---------------------------------------------");
+                  printf("\n Enter Your Choice: ");
+
                     scanf("%d",&choice);
        switch (choice){
 
@@ -89,18 +92,21 @@ void Addingplayer(){
        int choice1;
        int players;
          
-                printf("\n-----------Football Team Managment-----------");
-                printf("\n1. Add a New Player");
-                printf("\n2. Add multiple players");
-                printf("\n---------------------------------------------");
-                printf("\nEnter Your Choice: ");
+                 printf("\n=============================================");
+                 printf("\n           Football Team Management           ");
+                 printf("\n=============================================");
+                 printf("\n  [1] Add a New Player");
+                 printf("\n  [2] Add Multiple Players");
+                 printf("\n---------------------------------------------");
+                 printf("\n  Enter Your Choice: ");
+
                  scanf("%d",&choice1); 
 
       if(choice1 == 1){
 
                   playerid=playerid+1;
 
-                  printf("Player ID is ( %d )",playerid);
+                  printf("\n------------Player ID is ( %d )------------",playerid);
                   printf("\nAdd Player Name: ");
                         scanf("%s",p1[count].name);
                   printf("\nAdd Player Last Name: ");
@@ -116,7 +122,7 @@ void Addingplayer(){
 
                   p1[count].id = playerid;
             count++ ;
-                  printf("\nPlayer Added successfully!\n");
+                  printf("\n*******Player Added successfully!*******\n");
       } 
             else if(choice1 == 2){
 
@@ -128,7 +134,7 @@ void Addingplayer(){
                          playerid=playerid+1;
 
                   printf("\n-----------Adding Player %d -----------\n", i+1);
-                  printf("Player ID is ( %d )",playerid);
+                  printf("------------Player ID is ( %d )------------",playerid);
                   printf("\nAdd Player Name: ");
                    scanf("%s",p1[count].name);
                   printf("\nAdd Player Last Name: ");

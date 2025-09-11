@@ -26,6 +26,13 @@ void Searchforplayer();
 void playersStatistics();
 void Randomplayers();
 
+
+void Totalplayers();
+void avrgageof();
+void Playergoals();
+void TopScorer();
+void Showyoungold();
+
 int main(){
       Randomplayers();
      int choice;
@@ -294,7 +301,7 @@ void ShowPlayers(){
                             p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber,p1[i].playerrole,p1[i].age,p1[i].goals);
                        }
                   }   */
-            }
+
                   
                         else{
                            printf("\nWrong Choice Must be Between (1 - 3)");
@@ -484,7 +491,6 @@ void Searchforplayer(){
 
 void playersStatistics(){
       int choice4;
-
                                printf("\n=================================================");
                                printf("\n            Players Statistics Menu            ");
                                printf("\n=================================================");
@@ -501,73 +507,20 @@ void playersStatistics(){
 
                   switch (choice4){
                case 1:  
-                        if (count == 0) {
-                              printf("Players List is Empty\n");
-                                           return;
-                        }
-                             else{
-                             printf("\nTotal Number of Players in the Team: %d\n",count);
-                        }
+                        Totalplayers();
                break;
 
                case 2:
-                int sumofages=0;
-                int avrg=0;
-                        for( int i = 0 ; i < count ; i++){
-                        sumofages = p1[i].age + sumofages;
-                        }
-                             avrg = sumofages / count ;
-
-                             printf("\nThe average age of players: %d\n",avrg);
+                        avrgageof();
                break;
                case 3:
-               int x;
-                             printf("Enter Amount of Goals: ");
-                              scanf("%d",&x);
-                   
-                             printf("Players With More Then %d Goals",x);
-                                 for(int i=0 ; i < count ; i++){
-                                     if( p1[i].goals > x )
-                             
-                             printf("\nID: %d | Full Name: %s %s | Goals: %d\n",
-                               p1[i].id,p1[i].name,p1[i].lastname,p1[i].goals);
-
-                      }
+                        Playergoals();
                break;
                case 4:
-                       if (count == 0) {
-                             printf("No players available.\n");
-                                        return;
-                        }
-                  int maxGoals = p1[0].goals;
-                  int index = 0;
-                        for (int i = 1; i < count; i++) {
-                            if (p1[i].goals > maxGoals) {
-                               maxGoals = p1[i].goals;
-                                    index = i;
-                      }
-                  }
-                            printf("Top Scorer:\n");
-                            printf("ID: %d | Name: %s %s | Goals: %d\n", p1[index].id, p1[index].name, p1[index].lastname, p1[index].goals);
+                        TopScorer();
                break;
                case 5:
-                        if (count == 0) {
-                            printf("No players available.\n");
-                                         return;
-                        }
-                  int youngest = 0, oldest = 0;
-
-                        for (int i = 1; i < count; i++) {
-                            if (p1[i].age < p1[youngest].age) 
-                                   youngest = i;
-                            if (p1[i].age > p1[oldest].age) 
-                                   oldest = i;
-                    }
-                           printf("Youngest Player: %s %s (%d years old)\n",
-                               p1[youngest].name, p1[youngest].lastname, p1[youngest].age);
-
-                           printf("Oldest Player: %s %s (%d years old)\n",
-                               p1[oldest].name, p1[oldest].lastname, p1[oldest].age);
+                        Showyoungold();
                break;
                case 0:
               
@@ -603,3 +556,73 @@ void Randomplayers(){
         count++;
     }
 }
+
+void Totalplayers(){
+if (count == 0) {
+                              printf("Players List is Empty\n");
+                                           return;
+                        }
+                             else{
+                             printf("\nTotal Number of Players in the Team: %d\n",count);
+                        }
+      }
+void avrgageof(){
+int sumofages=0;
+                int avrg=0;
+                        for( int i = 0 ; i < count ; i++){
+                        sumofages = p1[i].age + sumofages;
+                        }
+                             avrg = sumofages / count ;
+
+                             printf("\nThe average age of players: %d\n",avrg);
+      }
+void Playergoals(){
+                  int x;
+                             printf("Enter Amount of Goals: ");
+                              scanf("%d",&x);
+                   
+                             printf("Players With More Then %d Goals",x);
+                                 for(int i=0 ; i < count ; i++){
+                                     if( p1[i].goals > x )
+                             
+                             printf("\nID: %d | Full Name: %s %s | Goals: %d\n",
+                               p1[i].id,p1[i].name,p1[i].lastname,p1[i].goals);
+
+                      }
+      }
+void TopScorer(){
+if (count == 0) {
+                             printf("No players available.\n");
+                                        return;
+                        }
+                  int maxGoals = p1[0].goals;
+                  int index = 0;
+                        for (int i = 1; i < count; i++) {
+                            if (p1[i].goals > maxGoals) {
+                               maxGoals = p1[i].goals;
+                                    index = i;
+                      }
+                  }
+                            printf("Top Scorer:\n");
+                            printf("ID: %d | Name: %s %s | Goals: %d\n", p1[index].id, p1[index].name, p1[index].lastname, p1[index].goals);
+      }
+void Showyoungold(){
+            
+            if (count == 0) {
+                            printf("No players available.\n");
+                                         return;
+                        }
+                  int youngest = 0, oldest = 0;
+
+                        for (int i = 1; i < count; i++) {
+                            if (p1[i].age < p1[youngest].age) 
+                                   youngest = i;
+                            if (p1[i].age > p1[oldest].age) 
+                                   oldest = i;
+                    }
+                           printf("Youngest Player: %s %s (%d years old)\n",
+                               p1[youngest].name, p1[youngest].lastname, p1[youngest].age);
+
+                           printf("Oldest Player: %s %s (%d years old)\n",
+                               p1[oldest].name, p1[oldest].lastname, p1[oldest].age);
+      }

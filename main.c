@@ -250,7 +250,7 @@ void ShowPlayers(){
                   for(int i = 0 ; i< count ; i++){
                      if (strcmp(p1[i].playerrole, searchbyposition) == 0){
 
-                        printf("\n              **********\n");
+                        
                         printf("ID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
                             p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber,p1[i].playerrole,p1[i].age,p1[i].goals);
                        }

@@ -164,6 +164,11 @@ void ShowPlayers(){
       int choice5;
       char searchbyposition[20];
       int choiceposition;          
+
+      if (count == 0) {
+                      printf("Players List is Empty\n");
+                                    return;
+      }
            
                    printf("\n=============================================");
                    printf("\n              Show Players Menu              ");
@@ -218,7 +223,41 @@ void ShowPlayers(){
                   }
       }
                            else if(choice5 == 3){
-
+                                                      printf("\n=================================================");
+                                                      printf("\n                Goal Keepers            ");
+                                                      printf("\n=================================================");
+                                          for(int i = 0 ; i < count ; i++){
+                                                if(strcmp(p1[i].playerrole, "goalkeeper")==0){
+                                                      printf("\nID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
+                                                      p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber,p1[i].playerrole,p1[i].age,p1[i].goals);
+                                                }}
+                                          
+                                                      printf("\n=================================================");
+                                                      printf("\n                Defenders             ");
+                                                      printf("\n=================================================");
+                                          for(int i = 0 ; i < count ; i++){
+                                                if(strcmp(p1[i].playerrole, "defender")==0){
+                                                      printf("\nID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
+                                                      p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber,p1[i].playerrole,p1[i].age,p1[i].goals);
+                                                }}
+                                                      printf("\n=================================================");
+                                                      printf("\n                Midfielders            ");
+                                                      printf("\n=================================================");
+                                          for(int i = 0 ; i < count ; i++){
+                                                if(strcmp(p1[i].playerrole, "midfielder")==0){
+                                                      printf("\nID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
+                                                      p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber,p1[i].playerrole,p1[i].age,p1[i].goals);
+                                                }}
+                                                      printf("\n=================================================");
+                                                      printf("\n                Attackers            ");
+                                                      printf("\n=================================================");
+                                          for(int i = 0 ; i < count ; i++){
+                                                if(strcmp(p1[i].playerrole, "attacker")==0){
+                                                      printf("\nID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
+                                                      p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber,p1[i].playerrole,p1[i].age,p1[i].goals);
+                                                }}
+                                          }
+                              /*
                                           printf("\n=================================================");
                                           printf("\n            Show Players by Position            ");
                                           printf("\n=================================================");
@@ -254,8 +293,9 @@ void ShowPlayers(){
                         printf("ID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
                             p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber,p1[i].playerrole,p1[i].age,p1[i].goals);
                        }
-                  }   
+                  }   */
             }
+                  
                         else{
                            printf("\nWrong Choice Must be Between (1 - 3)");
                                        return;
@@ -267,7 +307,11 @@ void Editplayer(){
          int search;
          int newage;
          char newposition[15];
-  
+
+         if (count == 0) {
+                        printf("Players List is Empty\n");
+                                       return;
+            }
                                  printf("\n=================================================");
                                  printf("\n                Edit Player Menu               ");
                                  printf("\n=================================================");

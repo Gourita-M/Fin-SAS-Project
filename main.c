@@ -412,6 +412,7 @@ void Searchforplayer(){
          int choice3;
          int idsearch;
          char namesearch[10];
+         int found = 0 ;
 
                              printf("\n=================================================");
                              printf("\n            Search for Player Menu             ");
@@ -429,13 +430,16 @@ void Searchforplayer(){
                        
                         for(int i = 0 ; i < count ; i++){
                            if(idsearch == p1[i].id){
-
+                                 found = 1 ;
                               printf("*****Player Found*****\n");
                               printf("ID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
                                 p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber,p1[i].playerrole,p1[i].age,p1[i].goals);
                               }
                        
                         }
+                        if(!found){
+                              printf("\nPlayer with ID %d not found.\n", idsearch);
+}
                   }        
                   else if(choice3 == 2){
                               printf("Enter Player Name : ");
@@ -443,7 +447,7 @@ void Searchforplayer(){
 
                   for(int i = 0 ; i< count ; i++){
                        if (strcmp(p1[i].name, namesearch) == 0){
-
+                                found = 1;
                               printf("\n*****Player Found*****\n");
                               printf("ID: %d | Full Name: %s %s | Player Number: %d | Position: %s | Age: %d | Goals: %d\n",
                                 p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber,p1[i].playerrole,p1[i].age,p1[i].goals);
@@ -451,7 +455,9 @@ void Searchforplayer(){
                               
                         }
                   }                
-      
+                       if(!found){
+                           printf("\nPlayer with Name %s not found.\n", namesearch);
+}
             }
         
                   else{
@@ -529,7 +535,7 @@ void Randomplayers(){
 }
 
 void Totalplayers(){
-if (count == 0) {
+                        if (count == 0) {
                               printf("Players List is Empty\n");
                                            return;
                         }
@@ -561,8 +567,9 @@ void Playergoals(){
 
                       }
       }
+
 void TopScorer(){
-if (count == 0) {
+                  if (count == 0) {
                              printf("No players available.\n");
                                         return;
                         }

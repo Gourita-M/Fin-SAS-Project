@@ -122,8 +122,6 @@ void Addingplayer(){
                                                        p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber);
                                                                     return;
                                                  }
-                                                       else
-                                                               p1[i].playernumber = playernum ; 
                                              }
                                           
                   printf("\nAdd Player Position (goalkeeper, defender, midfielder, attacker): ");
@@ -132,7 +130,7 @@ void Addingplayer(){
                         scanf("%d",&p1[count].age);
                   printf("\nAdd Player Goals: ");
                         scanf("%d",&p1[count].goals);
-
+                  p1[count].playernumber = playernum ; 
                   p1[count].id = playerid;
             count++ ;
                   printf("\n*******Player Added successfully!*******\n");
@@ -153,7 +151,15 @@ void Addingplayer(){
                   printf("\nAdd Player Last Name: ");
                    scanf("%s",p1[count].lastname);
                   printf("\nAdd Player Number: ");
-                   scanf(" %d",&p1[count].playernumber);
+                        scanf("%d",&playernum);
+                                             for(int i = 0 ; i < count ; i++){
+                                                  if(playernum == p1[i].playernumber){
+                                                       printf("\nThis Number is Already in use By\n");
+                                                       printf("\nID: %d | Full Name: %s %s | Player Number: %d\n",
+                                                       p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber);
+                                                                    return;
+                                                 }
+                                             }
                   printf("\nAdd Player Position (goalkeeper, defender, midfielder, attacker): ");
                    scanf("%s",p1[count].playerrole);
                   printf("\nAdd Player Age: ");
@@ -161,6 +167,7 @@ void Addingplayer(){
                   printf("\nAdd Player Goals: ");
                    scanf(" %d",&p1[count].goals);
 
+                        p1[count].playernumber = playernum ; 
                         p1[count].id = playerid;
             count++ ;
                   printf("\nPlayer Added successfully!\n");
@@ -169,7 +176,7 @@ void Addingplayer(){
              
             else{
                    printf("wrong Choice must be ( 1 or 2)");
-                   Addingplayer();
+                                  return;
             }
   
 }

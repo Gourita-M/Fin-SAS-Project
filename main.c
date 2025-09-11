@@ -314,7 +314,7 @@ void Editplayer(){
                                p1[i].id,p1[i].name,p1[i].lastname);
 
                              printf("\n Current Position is: %s",p1[i].playerrole);
-                             printf("\n Add New Position: ");
+                             printf("\n Add New Position(goalkeeper, defender, midfielder, attacker): ");
                               scanf("%s",newposition);
 
                                     strcpy(p1[i].playerrole, newposition);

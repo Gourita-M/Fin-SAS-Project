@@ -56,24 +56,30 @@ int main(){
        switch (choice){
 
             case 1: 
+                      system("@cls||clear");
                         Addingplayer();
                             break;
             case 2:
+                      system("@cls||clear");
                         ShowPlayers();
                             break;
             case 3:
+                      system("@cls||clear");
                         Editplayer();
                             break;
 
             case 4:
+                      system("@cls||clear");
                         DeletePlayer();
                             break;
 
             case 5:
+                      system("@cls||clear");
                         Searchforplayer();
                             break;
 
             case 6:
+                      system("@cls||clear");
                         playersStatistics();
                             break;
        

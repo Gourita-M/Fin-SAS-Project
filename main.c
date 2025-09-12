@@ -26,7 +26,7 @@ void Searchforplayer();
 void playersStatistics();
 void Randomplayers();
 
-
+// dyal statistics
 void Totalplayers();
 void avrgageof();
 void Playergoals();
@@ -319,9 +319,10 @@ void Editplayer(){
                               scanf("%s",newposition);
 
                                     strcpy(p1[i].playerrole, newposition);
+                             printf("Player Position is Changed Successfully!");
                        }
                   }
-                             printf("Player Position is Changed Successfully!");
+                             
              }
                   else if(choice2 == 2){
                              printf("\n*********Changing Player Age*********\n");
@@ -509,7 +510,7 @@ void playersStatistics(){
 
 void Randomplayers(){
    
-    char names[10][15] = {"Lionel","Cristiano","Virgil","Kevin","Mohamed","Hakim","Achraf","Noussair","Yassine","Sofyan"};
+    char names[10][15] = {"lionel","cristiano","virgil","kevin","mohamed","hakim","achraf","noussair","yassine","sofyan"};
     
     char lastnames[10][15] = {"Messi","Ronaldo","VanDaik","DeBruyne","Salah","Ziyech","Hakimi","Mazraoui","Bounou","Amrabat"};
 
@@ -544,8 +545,14 @@ void Totalplayers(){
                         }
       }
 void avrgageof(){
-int sumofages=0;
+              
+                       if (count == 0) {
+                             printf("No players available.\n");
+                                          return;
+                          } 
+                int sumofages=0;
                 int avrg=0;
+
                         for( int i = 0 ; i < count ; i++){
                         sumofages = p1[i].age + sumofages;
                         }

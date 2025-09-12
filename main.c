@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int count=0;
 int playerid=1000;
@@ -505,9 +506,6 @@ void playersStatistics(){
                break;
                case 5:
                         Showyoungold();
-               break;
-               case 0:
-              
                break;
                }
 

@@ -152,11 +152,11 @@ void Addingplayer(){
                    scanf("%s",p1[count].lastname);
                   printf("\nAdd Player Number: ");
                         scanf("%d",&playernum);
-                                             for(int i = 0 ; i < count ; i++){
-                                                  if(playernum == p1[i].playernumber){
+                                             for(int j = 0 ; j < count ; j++){
+                                                  if(playernum == p1[j].playernumber){
                                                        printf("\nThis Number is Already in use By\n");
                                                        printf("\nID: %d | Full Name: %s %s | Player Number: %d\n",
-                                                       p1[i].id,p1[i].name,p1[i].lastname,p1[i].playernumber);
+                                                       p1[j].id,p1[j].name,p1[j].lastname,p1[j].playernumber);
                                                                     return;
                                                  }
                                              }

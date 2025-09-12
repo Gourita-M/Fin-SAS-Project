@@ -293,6 +293,7 @@ void Editplayer(){
          int search;
          int newage;
          char newposition[15];
+         int found=0;
 
          if (count == 0) {
                         printf("Players List is Empty\n");
@@ -316,6 +317,7 @@ void Editplayer(){
                    
                      for( int i = 0 ; i < count ; i++){
                         if(p1[i].id == search){
+                              found = 1;
                              printf("Player is Found \n");
 
                              printf("ID: %d | Full Name: %s %s \n",
@@ -329,6 +331,9 @@ void Editplayer(){
                              printf("Player Position is Changed Successfully!");
                        }
                   }
+                  if(!found){
+                        printf("ID not Found");
+                      }
                              
              }
                   else if(choice2 == 2){
@@ -337,6 +342,7 @@ void Editplayer(){
                               scanf("%d",&search);
                    for( int i = 0 ; i < count ; i++){
                       if(p1[i].id == search){
+                        found = 1;
                              printf("\nPlayer is Found\n");
 
                              printf("ID: %d | Full Name: %s %s \n",
@@ -349,6 +355,9 @@ void Editplayer(){
                                        p1[i].age = newage;
                         }
                   }
+                  if(!found){
+                        printf("ID not Found");
+                      }
             }        
       
                   else if(choice2 == 3){
@@ -360,7 +369,7 @@ void Editplayer(){
                    
                    for( int i = 0 ; i < count ; i++){
                       if(p1[i].id == search){
-
+                           found = 1;
                              printf("\nPlayer is Found \n");
                              printf("ID: %d | Full Name: %s %s \n",
                                p1[i].id,p1[i].name,p1[i].lastname);
@@ -369,10 +378,15 @@ void Editplayer(){
                               printf("\nAdd New Scored Goals: ");
                                scanf("%d",&newgoals);
                                p1[i].goals = newgoals;
+                               printf("Player Scored Goals Changed Successfully!");
                         }
+                        }
+                        if(!found){
+                        printf("ID not Found");
+                      }
                   }
-                              printf("Player Scored Goals Changed Successfully!");
-            }
+                        
+            
 
                   
                   else{
